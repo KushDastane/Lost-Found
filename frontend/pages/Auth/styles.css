@@ -1,0 +1,225 @@
+/* General reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: url(../../images/Mit.jpg) no-repeat center center/cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    height: auto;
+    position: relative;
+    padding: 0 10px;
+    padding: 20px 10px;
+    flex-direction: column; 
+}
+
+/* Backdrop filter to darken the background */
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(6px);
+    background: rgba(0, 0, 0, 0.55);
+    z-index: -1;
+}
+
+/* Box styling for both signup and login */
+.signup-box, .login-box {
+    background: rgba(255, 255, 255, 0.15);  /* Slightly whiter */
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 12px;
+    padding: 30px;
+    width: 100%;
+    max-width: 360px; /* Maximum width of the box */
+    text-align: center;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(8px);
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+/* Login box specific styles */
+.login-box {
+    height: auto; /* Allow height to adjust based on content */
+}
+
+/* Heading styling */
+h2 {
+    color: #ffffff;
+    margin-bottom: 15px;
+    font-weight: bolder;
+}
+
+/* Toggle button styling for switching between roles */
+.role-toggle {
+    display: flex;
+    justify-content: center;
+    gap: 45px;
+    margin: 20px 0;
+    transition: 0.2s;
+}
+
+.role-btn {
+    padding: 10px 16px;
+    border: none;
+    background: transparent;
+    color: #e0e0e0;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: 0.2s ease;
+}
+
+.role-btn:hover {
+    color: #ff8bd3;
+}
+
+.role-btn.active {
+    background-color: #4a006e;
+    color: white;
+    font-weight: 500;
+    border-radius: 5px;
+}
+
+/* Input field styling */
+input {
+    width: 100%;
+    padding: 12px;
+    margin: 20px 0;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    background: rgba(255, 255, 255, 0.95);
+    font-size: 15px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input:focus {
+    outline: none;
+    border: 1px solid #800080;
+    box-shadow: 0 0 5px rgba(128, 0, 128, 0.3);
+}
+
+/* Button styling */
+.signup-btn {
+    background: #4a006e;
+    color: white;
+    padding: 14px;
+    width: 100%;
+    border: none;
+    border-radius: 6px;
+    font-size: 17px;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.signup-btn:hover {
+    background: #3b0059;
+}
+
+/* Footer and link styling */
+.login-text {
+    margin-top: 20px;
+    font-size: 14px;
+    color: #e2e2e2;
+}
+
+.login-text a {
+    color: #ffb0f3;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.login-text a:hover {
+    text-decoration: underline;
+    color: #fff;
+}
+
+.back-link {
+    display: inline-block;
+    margin-top: 1.5rem;
+    color: #e0c6ff;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.back-link:hover {
+    text-decoration: underline;
+    color: #fff;
+}
+
+/* Mobile responsive styles */
+@media (max-width: 768px) {
+    .signup-box, .login-box {
+        width: 90%;
+        padding: 20px;
+        max-width: 90%;  /* Ensure it’s centered on mobile */
+        margin: auto;  /* Ensure the box is centered */
+    }
+
+    .role-toggle {
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .role-btn {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 10px;
+        height: 100%;
+    }
+
+    .signup-box, .login-box {
+        padding: 18px;
+        max-width: 90%;
+        height: auto; /* Ensure height adjusts based on content */
+        justify-content: center;
+        align-items: center;
+    }
+
+    h2 {
+        font-size: 20px;
+    }
+
+    .role-btn {
+        font-size: 14px;
+        padding: 8px;
+    }
+
+    input, .signup-btn {
+        padding: 10px;
+    }
+}
+
+/* Initial state for the boxes */
+.signup-box, .login-box {
+    opacity: 0; /* Make them invisible initially */
+    transform: scale(0.8) rotateX(20deg); /* Scale down and rotate slightly */
+    animation: pop-out 0.6s ease-out forwards; /* Apply animation */
+}
+
+/* Animation to make the boxes pop outwards */
+@keyframes pop-out {
+    0% {
+        opacity: 0;
+        transform: scale(0.8) rotateX(20deg); /* Start smaller and slightly rotated */
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1) rotateX(0deg); /* Final size and reset rotation */
+    }
+}
+

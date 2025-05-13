@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Return a Found Item</title>
+    <link rel="stylesheet" href="found.css">
+    <link rel="icon" href="/weblogo.png" type="image/png" sizes="64x64">
+</head>
+
+<body>
+    <div class="container">
+        <div class="form-box">
+            <h2>"Return a Found Item"</h2>
+            <p><strong>Thank you for taking the time to return a lost item!</strong><br>
+                Please provide the necessary details below.</p>
+
+            <form id="foundForm" enctype="multipart/form-data">
+                <label>Item Name/Title:<span class="star">*</span></label>
+                <input type="text" name="name" required>
+
+                <label>Color, Brand, Marks, etc.:</label>
+                <input type="text" name="description">
+
+                <label>Date Found:<span class="star">*</span> </label>
+                <input type="date" name="dateFound" required>
+
+                <label>Where Did You Find It? (Select an Option):<span class="star">*</span></label>
+                <div class="input-box">
+                    <select name="locationFound" required>
+                        <option value="">-- Select Location --</option>
+                        <option value="SOC">SOC</option>
+                        <option value="SOES">SOES</option>
+                        <option value="SOFT">SOFT</option>
+                        <option value="MANET">MANET</option>
+                        <option value="CEW Workshop">CEW Workshop</option>
+                        <option value="Mechanical Workshop">Mechanical Workshop</option>
+                        <option value="Tuck Shop">Tuck Shop</option>
+                        <option value="Iod Lawn">Iod Lawn</option>
+                        <option value="Riverside">Riverside</option>
+                        <option value="Parking Lot">Parking Lot</option>
+                        <option value="Other">Other Location</option>
+                    </select>
+                </div>
+
+                <label>Category of Item<span class="star">*</span></label>
+                <select name="category" required>
+                    <option>Show all categories</option>
+                    <option>Bags & Backpacks</option>
+                    <option>Bicycles</option>
+                    <option>Children Items</option>
+                    <option>Clothing</option>
+                    <option>Computers & Electonics</option>
+                    <option>Eyewear</option>
+                    <option>Footwear</option>
+                    <option>IDs & Cards</option>
+                    <option>Keys</option>
+                    <option>Miscellaneous</option>
+                    <option>Mobile Devices</option>
+                    <option>Wallets & Purses</option>
+                    <option>Watches & Jewellry</option>
+                    <option>Waterbottles</option>
+                </select>
+
+                <label>Your Name:<span class="star">*</span></label>
+                <input type="text" name="user_name" required>
+
+                <label>Your Email:<span class="star">*</span></label>
+                <input type="email" name="user_email" required>
+
+                <label>College ID:<span class="star">*</span></label>
+                <input type="text" name="college_id" required>
+
+                <label>Does this item have any special features, markings, or identifying details? (If none, type
+                    'N/A'):<span class="star">*</span></label>
+                <textarea name="item_features" required></textarea>
+
+                <label>Please set a secret question that only the true owner would know the answer to:<span
+                        class="star">*</span></label>
+                <input type="text" name="secretQuestion" required>
+
+                <label>Set answer to secret question:<span class="star">*</span></label>
+                <input type="text" name="secretAnswer" required>
+
+                <label>Image Uploader:</label>
+                <input type="file" name="item_image" accept="image/*">
+
+                <p>We collect your contact details to confirm the return of the item and ensure it reaches the rightful
+                    owner. Providing accurate information helps us maintain a secure and efficient Lost & Found process.
+                    By submitting this form, you confirm that the details provided are correct.</p>
+
+                <div class="checkbox-container">
+                    <input type="checkbox" id="confirm_return" name="confirm_return" required>
+                    <label for="confirm_return"><strong>I confirm that I will return this item to the Lost & Found
+                            Desk.<span class="star">*</span></strong></label>
+                </div>
+
+                <button type="submit" class="submit-btn">Submit Return</button>
+            </form>
+            <a href="../Catalogues/catlog.html" class="back-link">Back to Catlog</a>
+        </div>
+    </div>
+    <script src="/frontend/js/authRedirect.js"></script>
+    <script src="found.js"></script>
+</body>
+
+</html>

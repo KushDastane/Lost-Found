@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Claim a Found Item</title>
+  <link rel="stylesheet" href="claim.css" />
+  <link rel="icon" href="/weblogo.png" type="image/png" sizes="64x64">
+</head>
+
+<body>
+  <div class="container">
+    <div class="top-heading">
+      <h1>"Claim a Found Item"</h1>
+      <p class="header">Verify your ownership to proceed with the claim.</p>
+    </div>
+
+    <div class="content">
+      <div class="left-section">
+        <h2><span class="highlight">Item Found!</span></h2>
+        <h1 id="item-name">Item Name</h1>
+        <p class="details" id="item-desc">Item Description</p>
+        <p class="details"><strong>Found:</strong> <span id="item-date"></span></p>
+        <p class="details"><strong>Location:</strong> <span id="item-location"></span></p>
+        <img id="item-image" class="item-image" />
+        <p class="question" id="secret-question">Secret Question: ...</p>
+      </div>
+
+      <div class="right-section">
+        <h2 class="claim-title">File Claim</h2>
+        <p class="claim-subtitle">
+          <strong>Is it yours? Fill out the form to claim your item! </strong>
+        </p>
+        <form id="claimForm">
+          <label>To help us verify that you are the owner: Note serial numbers,
+            engravings or anything unique that only you would know about this
+            item that you would like to share with us:<span>*</span></label>
+          <textarea required></textarea>
+
+          <label>Answer to secret question<span>*</span></label>
+          <input type="text" required />
+
+          <label>Your Name<span>*</span></label>
+          <input type="text" required />
+
+          <label>Your Email<span>*</span></label>
+          <input type="email" required />
+
+          <label>College ID<span>*</span></label>
+          <input type="text" required />
+          <p>We collect your details to verify your claim and ensure a
+            secure handover. Providing accurate information helps
+            us match the item to its rightful owner. By submitting this
+            form, you confirm that the information provided is correct.</p>
+
+          <div class="checkbox-group">
+            <input type="checkbox" id="confirm" required />
+            <label for="confirm">I confirm that I am the rightful owner of this item.<span>*</span></label>
+          </div>
+
+          <button type="submit">Submit Claim</button>
+        </form>
+        <a href="../catalogues/catlog.html" class="back-link">Back to Catalog</a>
+      </div>
+    </div>
+  </div>
+
+  <script src="claim.js"></script>
+  <script src="/frontend/js/authRedirect.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lost and Found</title>
+  <link rel="stylesheet" href="Catlog.css" />
+  <link rel="icon" href="/weblogo.png" type="image/png" sizes="64x64">
+</head>
+
+<body>
+  <div class="container">
+    <!-- Header Section with Banner and Logo -->
+    <div class="header">
+      <img class="banner" src="../../images/Mit.jpg" alt="MIT Banner" />
+      <div class="overlay">
+        <img class="logo" src="../../images/team work.png" alt="Logo" />
+        <p>“Reuniting people with their things, thanks to those who return them.”</p>
+      </div>
+    </div>
+
+    <div class="restcontent">
+      <!-- Top Buttons Section (Lost/Found Filing and Authentication) -->
+      <div class="top-buttons">
+        <div class="leftbtn">
+          <!-- Add IDs here for the buttons -->
+          <button id="file-lost-btn">File Lost</button>
+          <button id="file-found-btn">File Found</button>
+        </div>
+        <div class="rightbtn">
+          <!-- Auth Button will dynamically change based on login status -->
+          <div id="auth-btn">
+            <button id="login-btn">Login</button> <!-- Default to Login button -->
+          </div>
+        </div>
+      </div>
+
+      <hr />
+
+      <!-- Filters Section for Category, Date, and Search -->
+      <div class="filters">
+        <select id="categoryFilter">
+          <option value="">Show all categories</option>
+          <option>Bags & Backpacks</option>
+          <option>Bicycles</option>
+          <option>Children Items</option>
+          <option>Clothing</option>
+          <option>Computers & Electronics</option>
+          <option>Eyewear</option>
+          <option>Footwear</option>
+          <option>IDs & Cards</option>
+          <option>Keys</option>
+          <option>Miscellaneous</option>
+          <option>Mobile Devices</option>
+          <option>Wallets & Purses</option>
+          <option>Watches & Jewelry</option>
+          <option>Waterbottles</option>
+        </select>
+
+        <input type="date" id="dateFilter" />
+
+        <div class="search-wrapper">
+          <input type="text" id="searchInput" placeholder="e.g. Watch, Sweater, Wallet..." />
+          <div class="search-img" id="searchBtn">
+            <img src="https://cdn-icons-png.flaticon.com/512/622/622669.png" alt="Search" />
+          </div>
+        </div>
+      </div>
+
+      <!-- Container to Display Found Items -->
+      <div class="items" id="items-container"></div>
+
+      <!-- Pagination Controls -->
+      <div class="navbtns">
+        <div class="prev-btn-wrapper">
+          <button>⬅ Prev</button>
+        </div>
+        <div class="next-btn-wrapper">
+          <button>Next ➡</button>
+        </div>
+      </div>
+
+      <!-- Back Link to Home -->
+      <!-- <a href="homepage.html" class="back-link">← Back to Home</a> -->
+      <hr />
+    </div>
+  </div>
+
+  <!-- Link to JavaScript -->
+  <script src="Catlog.js"></script>
+</body>
+
+</html>
