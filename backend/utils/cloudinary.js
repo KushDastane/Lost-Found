@@ -12,10 +12,13 @@ cloudinary.config({
 const storage = new CloudinaryStorage({
     cloudinary: cloudinary,
     params: {
-        folder: 'lost-and-found', // Cloudinary folder
+        folder: 'lost-and-found',
         allowed_formats: ['jpg', 'png', 'jpeg'],
+        resource_type: 'image',
+        transformation: [{ width: 500, height: 500, crop: 'limit' }],
     },
 });
+  
 
 module.exports = {
     cloudinary,

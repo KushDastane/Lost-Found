@@ -4,15 +4,6 @@ const multer = require('multer'); // For handling file uploads
 const upload = require('../middleware/upload');
 const { createFoundItem } = require('../controllers/foundController'); // Import controller
 
-// Configure multer for image upload
-const storage = multer.diskStorage({
-    destination: (req, file, cb) => {
-        cb(null, './uploads/'); // Directory where images will be stored
-    },
-    filename: (req, file, cb) => {
-        cb(null, Date.now() + '-' + file.originalname); // Naming files uniquely
-    }
-});
 
 // Use controller function for POST route to handle the found item form submission
 router.post('/found', upload.single('item_image'), createFoundItem);

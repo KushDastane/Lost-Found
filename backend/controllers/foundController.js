@@ -7,6 +7,8 @@ const createFoundItem = async (req, res) => {
     try {
         console.log('Received req.body:', req.body);
         console.log('Received req.file:', req.file);
+        console.log('Image URL Cloudinary returned:', req.file?.path || 'No path');
+
 
         const { name, description, category, dateFound, locationFound, user_name, user_email, college_id, item_features, secretQuestion, secretAnswer } = req.body;
 
