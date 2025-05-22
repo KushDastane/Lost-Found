@@ -30,7 +30,7 @@
 // module.exports = upload;
 
 const multer = require('multer');
-const { storage } = require('../config/cloudinary');
+const { storage } = require('../utils/cloudinary');
 
 const upload = multer({ storage });
 
