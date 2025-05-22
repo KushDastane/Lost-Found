@@ -4,7 +4,7 @@ const foundItemSchema = new mongoose.Schema({
     description: String,
     category: { type: String, required: true },
     dateFound: { type: Date, required: true },
-    locationFound: String,
+    locationFound:{ type: String, required: true},
     imageUrl: String,
     secretQuestion: { type: String, required: true },
     secretAnswer: { type: String, required: true },

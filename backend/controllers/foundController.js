@@ -53,13 +53,14 @@ const createFoundItem = async (req, res) => {
                     name: newFoundItem.name,
                     description: newFoundItem.description,
                     category: newFoundItem.category,
+                    locationFound: newFoundItem.locationFound,
                     user_name: newFoundItem.user_name,
                     user_email: newFoundItem.user_email
                 });
                 try {
                     await sendLostReporterNotification(
                         lostItem.user_email,
-                        newFoundItem,
+                        newFoundItem.toObject(),
                         lostItem.user_name || 'Not provided',
                         lostItem.user_email || 'Not provided'
                     );
