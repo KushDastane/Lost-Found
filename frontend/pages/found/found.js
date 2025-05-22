@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const formData = new FormData(form);
 
         try {
-            const response = await fetch('/api/found', {
+            const response = await fetch('/api/found/found', {  // Updated URL here
                 method: 'POST',
                 body: formData,
             });
