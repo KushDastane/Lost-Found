@@ -50,6 +50,7 @@ const sendLostReporterNotification = async (lostReporterEmail, foundItem, report
             <p><strong>Found Item:</strong> ${foundItem.name}</p>
             <p><strong>Description:</strong> ${foundItem.description}</p>
             <p><strong>Category:</strong> ${foundItem.category}</p>
+            <p><strong>Location:</strong>${foundItem.locactionFound}</p>
             <p>Please visit our website & check catalogue.</p>
         `
     };
