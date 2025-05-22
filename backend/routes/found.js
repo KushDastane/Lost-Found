@@ -14,8 +14,6 @@ const storage = multer.diskStorage({
     }
 });
 
-const upload = multer({ storage: storage });
-
 // Use controller function for POST route to handle the found item form submission
 router.post('/found', upload.single('item_image'), createFoundItem);
 
