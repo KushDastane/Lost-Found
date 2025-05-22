@@ -27,7 +27,7 @@ document.getElementById("claimForm").addEventListener("submit", async (e) => {
   const token = localStorage.getItem("token");
   if (!token) {
     alert("You must be logged in to submit a claim.");
-    window.location.href = "/pages/Login/login.html";
+    window.location.href = "/login.";
     return;
   }
 
@@ -67,7 +67,7 @@ document.getElementById("claimForm").addEventListener("submit", async (e) => {
 
     if (res.ok) {
       alert(data.isMatch ? "Claim matched and submitted!" : "Claim submitted, but secret answer did not match.");
-      window.location.href = "../catalogues/catlog.html";
+      window.location.href = "/catalogues";
     } else {
       alert(data.message || "Claim failed.");
     }

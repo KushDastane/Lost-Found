@@ -139,7 +139,7 @@ function renderItems(items) {
 
     // Add click event handler to store item and navigate to claim page
     button.addEventListener('click', () => {
-      handleItemClick(item, '../claim/claim.html');
+      handleItemClick(item, '/claim');
     });
 
     // Append all elements to the card
@@ -160,7 +160,7 @@ function handleItemClick(item, targetPage) {
   const token = localStorage.getItem("token");
   if (!token) {
     alert("You must be logged in to claim this item.");
-    window.location.href = "../Auth/login.html";
+    window.location.href = "/login";
   } else {
     storeItemForClaim(item);
     window.location.href = targetPage;
@@ -172,7 +172,7 @@ function handleFileButtonClick(targetPage) {
   const token = localStorage.getItem("token");
   if (!token) {
     alert("You must be logged in to file a lost or found item.");
-    window.location.href = "../Auth/login.html";  // Redirect to login page if not logged in
+    window.location.href = "/login";  // Redirect to login page if not logged in
   } else {
     window.location.href = targetPage;  // Redirect to respective page if logged in
   }
@@ -180,11 +180,11 @@ function handleFileButtonClick(targetPage) {
 
 // Add event listeners to "File Lost" and "File Found" buttons
 document.getElementById("file-lost-btn").addEventListener("click", () => {
-  handleFileButtonClick("../lost/lost.html");  // Redirect to lost page
+  handleFileButtonClick("/lost");  // Redirect to lost page
 });
 
 document.getElementById("file-found-btn").addEventListener("click", () => {
-  handleFileButtonClick("../found/found.html");  // Redirect to found page
+  handleFileButtonClick("/found");  // Redirect to found page
 });
 
 

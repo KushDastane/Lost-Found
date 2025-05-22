@@ -41,7 +41,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
             if (response.ok) {
                 alert("You will be notified.");
-                window.location.href = "../catalogues/catlog.html";
+                window.location.href = "/catalogues";
             } else {
                 const errorData = await response.json();
                 alert("Error submitting form: " + (errorData.message || "Unknown error"));

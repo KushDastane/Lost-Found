@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", function () {
             const data = await response.json();
             if (response.ok) {
                 alert("Item submitted successfully.");
-                window.location.href = '../Catalogues/catlog.html'; // Redirect to catalog after successful submission
+                window.location.href = '/catalogues'; // Redirect to catalog after successful submission
             } else {
                 alert(data.message || "An error occurred. Please try again.");
             }
