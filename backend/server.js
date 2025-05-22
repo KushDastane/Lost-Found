@@ -20,6 +20,7 @@ mongoose.set('strictQuery', false);
 app.use(cors());
 
 // Serve static frontend files and assets
+app.use('/auth', express.static(path.join(__dirname, '..', 'frontend', 'pages', 'Auth')));
 app.use(express.static(path.join(__dirname, '..', 'frontend')));
 app.use('/images', express.static(path.join(__dirname, '..', 'frontend', 'images')));
 app.use('/js', express.static(path.join(__dirname, '..', 'frontend', 'js')));
