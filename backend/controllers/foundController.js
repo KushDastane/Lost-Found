@@ -16,9 +16,10 @@ const createFoundItem = async (req, res) => {
 
         // Get image URL from uploaded file if present
         let imageUrl = '';
-        if (req.file) {
-            imageUrl = `/uploads/${req.file.filename}`;
+        if (req.file && req.file.path) {
+            imageUrl = req.file.path; // Cloudinary provides a public URL here
         }
+
 
         // Create a new found item
         const newFoundItem = new FoundItem({
