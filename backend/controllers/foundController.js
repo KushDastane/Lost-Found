@@ -39,8 +39,8 @@ const createFoundItem = async (req, res) => {
         await newFoundItem.save();
 
         // Find matching lost items
-        const lostItems = await LostItem.find({ category, user_email });
-        console.log(`Found ${lostItems.length} lost items matching category: ${category} and user_email: ${user_email}`);
+        const lostItems = await LostItem.find({ category, locationLost:locationFound });
+        console.log(`Matching lost items with category: ${category} and location: ${locationFound}`);
         lostItems.forEach(item => console.log(`Lost item user_email: ${item.user_email}`));
 
 
