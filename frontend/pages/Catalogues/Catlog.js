@@ -80,10 +80,10 @@ function logout() {
   updateAuthButton(false);
 
   // Option 1: Reload the page to reset the state and UI (preferred if you want to reset everything)
-  window.location.reload();
+  // window.location.reload();
 
   // Option 2: Redirect to the login page (if you prefer a redirect instead of a full reload)
-  window.location.href = "../home/homepage.html";
+  window.location.href = "/";
 }
 
 // Fetch found items from backend
